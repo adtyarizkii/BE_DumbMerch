@@ -5,6 +5,8 @@ require("dotenv").config()
 
 const port = 5000;
 
+app.use("/uploads", express.static("uploads"))
+
 const router = require("./src/routes")
 
 app.use(express.json());
