@@ -11,7 +11,7 @@ const {auth} = require("../middleware/auth")
 const {getUsers, register, login, deleteUser, updateUser, getUser} = require("../controllers/user");
 const {getProduct, addProduct, detailProduct, updateProduct, deleteProduct} = require("../controllers/product");
 const { addCategory, getCategories, getCategory, deleteCategory, updateCategory } = require("../controllers/category");
-const {addTransaction } = require("../controllers/transaction");
+const {addTransaction, getTransaction } = require("../controllers/transaction");
 
 // login&register router 
 router.get("/user", getUsers);
@@ -37,5 +37,6 @@ router.delete("/category/:id", auth, deleteCategory);
 
 // transaction router
 router.post("/transaction", auth, addTransaction);
+router.get("/transactions", auth, getTransaction);
 
 module.exports = router;
